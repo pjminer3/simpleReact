@@ -10,9 +10,12 @@ class SearchBar extends Component {
   
   render() {
     return (
-      // onChange is built into HTML and is part of javascript, so is 'event.target.value'
+      // onChange (input), event.target.value, and value (input) is built into HTML and is part of javascript
       <div>
-        <input onChange={(event) => {this.setState({term: event.target.value})}} />
+        <input 
+          value={this.state.term}
+          onChange={(event) => {this.setState({term: event.target.value})}} 
+        />
       </div>
     );
   }
