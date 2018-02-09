@@ -15,16 +15,19 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      videos: [],
+    };
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      this.setState({videos})
-      console.log(this.state.videos);
+    YTSearch({key: 'AIzaSyCD2ygjUk6ZV5UjutyDaSOOOgEzfJa-L24', term: 'surfboards'}, (videos) => {
+      this.setState({
+        videos
+       });
     });
-
   }
 
   render() {
+    console.log(this.state.videos);
     return (
       <div>
         <SearchBar />
