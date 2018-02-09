@@ -1,11 +1,16 @@
 import React from 'react';
+import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
+  const videoItems = props.videos.map((video) => {
+    return <VideoListItem video={video} key={video.etag} />
+  }
+);
+  
   return (
     // in BootStrap we use 'className' instead of 'class'
     <ul className="col-md-4 list-group">
-      <li>Hello</li>
-      <li>{props.videos.length}</li>
+      {videoItems}
     </ul>
   );
 };
