@@ -1,6 +1,13 @@
 import React from 'react';
 
 const VideoDetail = ({video}) => {
+  // error handling for before we get a response back from youtube
+  if (!video) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+
   const videoTitle = video.snippet.title;
   const videoDescription = video.snippet.description;
   const videoId = video.id.videoId;
