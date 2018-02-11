@@ -11,7 +11,7 @@ class SearchBar extends Component {
   render() {
     return (
       // onChange (input), event.target.value, and value (input) is built into HTML and is part of javascript
-      <div>
+      <div className="search-bar">
         <input 
           value={this.state.term}
           onChange={(event) => {this.setState({term: event.target.value})}} 
